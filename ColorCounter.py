@@ -15,6 +15,9 @@ def main():
         os.system('clear')
         
     size = 10
+    tempSize = input(f"The default matrix is {size}x{size}. Enter a number to change it.\nOtherwise, hit ENTER to start playing ")
+    if tempSize.isnumeric():
+        size = int(tempSize)
     ColorsDict = {31: 'Red', 32: 'Green', 33: 'Yellow', 34: 'Blue', 35: 'Magenta', 36: 'Cyan', 37: 'White'}
     ColorsList = list(ColorsDict.keys())
     matrix = [[0 for x in range(size)] for y in range(size)]
@@ -64,7 +67,7 @@ def main():
     print (f"It took you {elapsed} seconds")
     
     if int(guess) == matches:
-        print ("YOU ARE A GENIUS !!!!")
+        print ("YOU ARE A GENIUS !!!")
     else:
         print (f"Sorry, there were {matches}")
     # print the color matches
@@ -76,7 +79,7 @@ def main():
                 ColorPrint(30)
         print()
 
-    if input("Play again? (Y/N) ").lower() == "y":
+    if input ("Play again? (Y/N) ").lower() == "y":
         main()
     else:
         print ("Good bye")
